@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp4.ViewModels;
 
 namespace WpfApp4
 {
@@ -22,8 +23,10 @@ namespace WpfApp4
     {
         public MainWindow()
         {
-            DataContext = this;
             InitializeComponent();
+            var vm = new MainWindowViewModels();
+            this.DataContext = vm;
+            
         }
     }
 }
