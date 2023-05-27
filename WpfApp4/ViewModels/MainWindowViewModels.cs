@@ -50,7 +50,7 @@ namespace WpfApp4.ViewModels
         {
             InsertCommand = new RelayCommand(obj =>
             {
-                MessageBox.Show("Yaksi Oklan Allahyar");
+                
             });
 
             DeleteCommand = new RelayCommand(obj =>
