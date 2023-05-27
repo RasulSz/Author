@@ -11,9 +11,9 @@ namespace WpfApp4.ViewModels
 {
     public class MainWindowViewModels : BaseViewModel
     {
-        RelayCommand InsertCommand { get; set; }
-        RelayCommand DeleteCommand { get; set; }
-        RelayCommand ShowAllCommand { get; set; }
+        public RelayCommand InsertCommand { get; set; }
+        public RelayCommand DeleteCommand { get; set; }
+        public RelayCommand ShowAllCommand { get; set; }
         private TextBox id;
 
         public TextBox Id
@@ -50,7 +50,7 @@ namespace WpfApp4.ViewModels
         {
             InsertCommand = new RelayCommand(obj =>
             {
-                
+                MessageBox.Show("Yaksi Oklan Allahyar");
             });
 
             DeleteCommand = new RelayCommand(obj =>
