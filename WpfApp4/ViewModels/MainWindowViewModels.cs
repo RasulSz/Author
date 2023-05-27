@@ -45,6 +45,24 @@ namespace WpfApp4.ViewModels
             set { authors = value; OnPropertyChanged(); }
         }
 
+        public MainWindowViewModels()
+        {
+            InsertCommand = new RelayCommand(obj =>
+            {
+
+            });
+
+            DeleteCommand = new RelayCommand(obj =>
+            {
+
+            });
+
+            ShowAllCommand = new RelayCommand(obj =>
+            {
+
+            });
+
+        }
 
     }
 }

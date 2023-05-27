@@ -22,6 +22,7 @@ namespace WpfApp4
     {
         public MainWindow()
         {
+            DataContext = this;
             InitializeComponent();
         }
     }
