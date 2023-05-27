@@ -14,25 +14,25 @@ namespace WpfApp4.ViewModels
         public RelayCommand InsertCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand ShowAllCommand { get; set; }
-        private TextBox id;
+        private int id;
 
-        public TextBox Id
+        public int Id
         {
             get { return id; }
             set { id = value; OnPropertyChanged(); }
         }
 
-        private TextBox firstname;
+        private string firstname;
 
-        public TextBox FirstName
+        public string FirstName
         {
             get { return firstname; }
             set { firstname = value; OnPropertyChanged(); }
         }
 
-        private TextBox lastname;
+        private string lastname;
 
-        public TextBox LastName
+        public string LastName
         {
             get { return lastname; }
             set { lastname = value; OnPropertyChanged(); }
@@ -50,7 +50,7 @@ namespace WpfApp4.ViewModels
         {
             InsertCommand = new RelayCommand(obj =>
             {
-                
+                LastName = FirstName;
             });
 
             DeleteCommand = new RelayCommand(obj =>
