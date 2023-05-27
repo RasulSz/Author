@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using WpfApp4.Commands;
 
@@ -49,7 +50,7 @@ namespace WpfApp4.ViewModels
         {
             InsertCommand = new RelayCommand(obj =>
             {
-
+                
             });
 
             DeleteCommand = new RelayCommand(obj =>
