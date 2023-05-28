@@ -15,12 +15,8 @@ namespace WpfApp4.Commands
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-
-
         Action<object> _execute;
         Predicate<object> _canExecute;
-
-
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
         {
@@ -32,14 +28,10 @@ namespace WpfApp4.Commands
             _canExecute = canExecute;
         }
 
-
-
         public bool CanExecute(object parameter)
         {
             return _canExecute == null ? true : _canExecute(parameter);
         }
-
-
 
         public void Execute(object parameter)
         {
