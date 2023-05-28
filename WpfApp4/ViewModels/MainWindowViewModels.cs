@@ -64,41 +64,10 @@ namespace WpfApp4.ViewModels
 
             ShowAllCommand = new RelayCommand(obj =>
             {
-                string cs = "";
-                DataTable table;
-                SqlDataReader reader;
-                using (var conn = new SqlConnection())
-                {
-                    conn.ConnectionString = cs;
-                    conn.Open();
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = "SELECT * FROM Authors";
-                    command.Connection = conn;
-                    table = new DataTable();
-                    bool hasColumnAdded = false;
-                    using (reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            if (!hasColumnAdded)
-                            {
-                                for (int i = 0; i < reader.FieldCount; i++)
-                                {
-                                    table.Columns.Add(reader.GetName(i));
-                                }
-                                hasColumnAdded = true;
-                            }
-                            DataRow row = table.NewRow();
-                            for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                row[i] = reader[i];
-                            }
-                            table.Rows.Add(row);
-                        }
-                        author.ItemsSource = table.DefaultView;
-                    }
-                }
-            });
+
+
+            });   
+            
         }
     }
 }
