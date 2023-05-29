@@ -63,7 +63,10 @@ namespace WpfApp4.ViewModels
 
             InsertCommand = new RelayCommand(obj =>
             {
-
+                Authorss.Insert(Id, FirstName, LastName);
+                Id = 0;
+                FirstName = string.Empty;
+                LastName = string.Empty;
             });
 
             DeleteCommand = new RelayCommand(obj =>
