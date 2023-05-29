@@ -29,7 +29,7 @@ namespace WpfApp4.ViewModels
         public Repository Authorss { get; set; }
         public RelayCommand InsertCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
-        public RelayCommand ShowAllCommand { get; set; }
+
         private int id;
 
         public int Id
@@ -71,10 +71,6 @@ namespace WpfApp4.ViewModels
 
             });
 
-            ShowAllCommand = new RelayCommand(obj =>
-            {
-
-            });
         }
     }
 }

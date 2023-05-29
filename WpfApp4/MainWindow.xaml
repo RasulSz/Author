@@ -20,13 +20,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListBox ItemsSource="{Binding Authors}" Name="author" FontSize="20" Grid.Column="2" Grid.RowSpan="6"></ListBox>
+        <ListBox ItemsSource="{Binding Authors}" Name="author" FontSize="15" Grid.Column="2" Grid.RowSpan="6"></ListBox>
         <TextBox Text="{Binding Id}" FontSize="20" Grid.Column="1" HorizontalAlignment="Left" Width="130" Height="40"></TextBox>
         <TextBox Text="{Binding FirstName}" FontSize="20" Grid.Column="1" HorizontalAlignment="Left" Width="130" Height="40" Grid.Row="1"></TextBox>
         <TextBox Text="{Binding LastName}" FontSize="20" Grid.Column="1" HorizontalAlignment="Left" Width="130" Height="40" Grid.Row="2"></TextBox>
         <Button Command="{Binding InsertCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" Height="40" Width="130" Content="Insert" FontSize="25" Background="Green"></Button>
         <Button Command="{Binding DeleteCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" Height="40" Width="130" Content="Delete" FontSize="25" Background="Red"></Button>
-        <Button Command="{Binding ShowAllCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="5" Height="40" Width="130" Content="Show All" FontSize="25" Background="DarkBlue"></Button>
         <Label Content="Id" FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
         <Label Content="FirstName" FontSize="21" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1"></Label>
         <Label Content="LastName" FontSize="21" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2"></Label>
