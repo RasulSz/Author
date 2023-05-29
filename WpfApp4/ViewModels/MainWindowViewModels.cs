@@ -54,6 +54,16 @@ namespace WpfApp4.ViewModels
             set { lastname = value; OnPropertyChanged(); }
         }
 
+        private int index;
+
+        public int Index
+        {
+            get { return index; }
+            set { index = value; OnPropertyChanged(); }
+        }
+
+        public RelayCommand SelectionChanged { get; set; }
+
 
         public MainWindowViewModels()
         {
@@ -74,6 +84,25 @@ namespace WpfApp4.ViewModels
 
             });
 
+            SelectionChanged = new RelayCommand(obj =>
+            {
+                using (var conn = new SqlConnection())
+                {
+                    var cs = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Library;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                    conn.ConnectionString = cs;
+                    conn.Open();
+                    string query = @"DELETE FROM Authors
+                                   WHERE Id = @index";
+                    var paramIndex = new SqlParameter();
+                    paramIndex.ParameterName = "@index";
+                    paramIndex.SqlDbType = SqlDbType.Int;
+                    paramIndex.Value = index;
+                    var command = new SqlCommand(query,conn);
+                    command.Parameters.Add(paramIndex);
+                    command.ExecuteNonQuery();
+
+                }
+            });
         }
     }
 }

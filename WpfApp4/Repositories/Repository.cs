@@ -91,5 +91,7 @@ namespace WpfApp4.Repositories
                 
             }
         }
+
+        //public void Delete()
     }
 }
