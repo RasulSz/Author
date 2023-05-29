@@ -13,7 +13,10 @@ namespace WpfApp4.Repositories
 {
     public class Repository
     {
+       
         ObservableCollection<Author> authors = new ObservableCollection<Author>();
+
+
         public Repository()
         {
             using (var conn = new SqlConnection())
@@ -23,24 +26,19 @@ namespace WpfApp4.Repositories
                 conn.Open();
                 SqlDataReader reader = null;
                 string query = "SELECT * FROM Authors";
-                using(var command = new SqlCommand(query, conn))
+                using (var command = new SqlCommand(query, conn))
                 {
                     reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            Author author = new Author();
-                            //authors = reader[i][0];
-                            MessageBox.Show($"{reader[i]}");
-                            
-                        }
+                       Author author = new Author();
+                        author.Id = (int)reader[0];
+                        author.FirstName = reader[1].ToString();
+                        author.LastName = reader[2].ToString();
+                        authors.Add(author);
                     }
-
                 }
-
             }
-
         }
         public ObservableCollection<Author> GetAll()
         {

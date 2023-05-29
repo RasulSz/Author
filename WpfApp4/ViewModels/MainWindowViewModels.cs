@@ -18,7 +18,14 @@ namespace WpfApp4.ViewModels
 {
     public class MainWindowViewModels : BaseViewModel
     {
-        ObservableCollection<Author> aauthors;
+        private ObservableCollection<Author> authors;
+
+        public ObservableCollection<Author> Authors
+        {
+            get { return authors; }
+            set { authors = value; OnPropertyChanged(); }
+        }
+
         public Repository Authorss { get; set; }
         public RelayCommand InsertCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
@@ -47,25 +54,16 @@ namespace WpfApp4.ViewModels
             set { lastname = value; OnPropertyChanged(); }
         }
 
-        private DataGrid authors;
-
-        public DataGrid Authors
-        {
-            get { return authors; }
-            set { authors = value; OnPropertyChanged(); }
-        }
 
         public MainWindowViewModels()
         {
+            
             Authorss = new Repository();
-            aauthors = new ObservableCollection<Author>(Authorss.GetAll());
-            Authors = new DataGrid();
-            Authors.ItemsSource = aauthors;
-            Authors.DisplayMemberPath = nameof(Author.FirstName);
+            authors = Authorss.GetAll();
 
             InsertCommand = new RelayCommand(obj =>
             {
-                LastName = FirstName;
+
             });
 
             DeleteCommand = new RelayCommand(obj =>
@@ -77,7 +75,6 @@ namespace WpfApp4.ViewModels
             {
 
             });
-
         }
     }
 }
