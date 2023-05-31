@@ -79,10 +79,6 @@ namespace WpfApp4.ViewModels
                 LastName = string.Empty;
             });
 
-            DeleteCommand = new RelayCommand(obj =>
-            {
-
-            });
 
             SelectionChanged = new RelayCommand(obj =>
             {
